@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import FileUpload from './components/FileUpload';
+import VoiceRecorder from './components/VoiceRecorder';
 import Settings from './components/Settings';
 import Transcript from './components/Transcript';
 import AudioPlayer from './components/AudioPlayer';
@@ -105,6 +106,7 @@ function App() {
           <div>
             <Settings apiKey={apiKey} onSave={handleApiKeySave} />
             <FileUpload onUpload={handleFileUpload} isProcessing={isProcessing} />
+            <VoiceRecorder onRecordingComplete={handleFileUpload} isProcessing={isProcessing} />
             {transcript && (
               <ExportTranscript transcript={transcript} />
             )}
